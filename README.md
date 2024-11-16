@@ -16,7 +16,4 @@ Designing RESTful APIs with well-defined routes and endpoints
 ![image](https://github.com/user-attachments/assets/e95fbf97-57a9-48b7-b889-a28a55f94c16)
 ![image](https://github.com/user-attachments/assets/a7a0a775-c192-4dd8-9904-f337dffff603)
 
-
-
-
-
+Working on this project allowed me to explore the fundamentals of backend development with Node.js and Express while enhancing my understanding of RESTful API design. I also learned handling JSON data and implementing key HTTP methods, which deepened my grasp of how data flows between a server and a client. Overall, this project was both challenging but at least it somehow provided me with a solid foundation for future web development projects.
