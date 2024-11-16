@@ -81,22 +81,7 @@ app.get('/users/profession/:profession', (req, res) => {
   });
   });
 
-// Endpoint to get a user by their names
-app.get('/users/name/:name', (req, res) => {
-  fs.readFile('users.json', 'UTF-8', (err, data) => {
-    if (err) {
-      res.status(500).send('FAILED TO READ DATA FROM THE FILE');
-    } else {
-      const users = JSON.parse(data);
-      const user = Object.values(users).find(user => user.name.toLowerCase() === req.params.name.toLowerCase());
-      if (user) {
-          res.send(user);
-        } else {
-          res.status(404).send('USER CANNOT BE FOUND');
-        }
-      }
-    });
-  });
+
 
 //Start the sever
 app.listen(PORT,()=>{
