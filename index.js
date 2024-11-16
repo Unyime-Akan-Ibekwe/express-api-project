@@ -1,21 +1,19 @@
 const express = require('express')
 const app = express();
-
-const fs = require('fs'); //For the fs module
+const fs = require('fs'); //For fs module
 const PORT = 5000;
 
 app.get("/", (req, res)=>{
   res.send("HELLO, AND WELCOME TO MY FIRST SERVER")
 })
 
-//Helper function to read users.json
+//Helper function to read the users.json file
 const getUsers = () => {
-    const data = fs.readFileSync('.users.json', 'UTF-8'); //Read file synchronously
+    const data = fs.readFileSync('.users.json', 'UTF-8'); //To read file synchronously
     return JSON.parse(data); //Parse JSON data
 }
 
-//Endpoint to list all the users
-
+//Endpoint to GET the list of all the users
   app.get('/users', (req, res) => {
     fs.readFile('users.json', 'UTF-8', (err, data) => {
       if (err) {
@@ -27,7 +25,7 @@ const getUsers = () => {
   });
 
 
-// Endpoint to get a user by their names
+// Endpoint to GET a user by their name
 app.get('/users/name/:name', (req, res) => {
   fs.readFile('users.json', 'UTF-8', (err, data) => {
     if (err) {
@@ -46,7 +44,7 @@ app.get('/users/name/:name', (req, res) => {
   
 
   
-//Endpoint to get user by their IDs
+//Endpoint to GET a user by their ID
 app.get("/users/:id", (req, res)=>{
     //res.send("This is the users ID list")//
     fs.readFile('users.json', 'UTF-8', (err, data) => {
@@ -64,7 +62,7 @@ app.get("/users/:id", (req, res)=>{
   })
 })
 
-// Endpoint to get users by their professions
+//Endpoint to GET a user by their professions
 app.get('/users/profession/:profession', (req, res) => {
   fs.readFile('users.json', 'UTF-8', (err, data) => {
     if (err) {
@@ -83,7 +81,7 @@ app.get('/users/profession/:profession', (req, res) => {
 
 
 
-//Start the sever
+//Starting the server
 app.listen(PORT,()=>{
     console.log(`My server is running on: http://localhost:${PORT}`);
 })
